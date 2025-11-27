@@ -4,8 +4,7 @@
   "description": "A project that fetches trending GitHub repositories and sends the information to DingTalk.",
   "main": "src/index.ts",
   "scripts": {
-    "start": "ts-node src/index.ts",
-    "build": "tsc -p tsconfig.json",
+     "build": "tsc -p tsconfig.json",
     "start": "node dist/index.js",
     "run-once": "bash scripts/run-once.sh"
   },
