@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { formatProjectData } from './utils/format';
+import { formatProject } from './utils/format';
 
 const DINGTALK_WEBHOOK_URL = process.env.DINGTALK_WEBHOOK_URL;
 
