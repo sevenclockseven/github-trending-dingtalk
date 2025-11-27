@@ -2,6 +2,9 @@ export interface GitHubProject {
     id: number;
     name: string;
     full_name: string;
+    url: string;
+    stars: number;
+
     owner: {
         login: string;
         id: number;
