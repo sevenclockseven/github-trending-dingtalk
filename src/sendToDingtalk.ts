@@ -1,7 +1,8 @@
 import axios from 'axios';
 import { formatProject, Project } from './utils/format';
 
-const DINGTALK_WEBHOOK_URL = process.env.DINGTALK_WEBHOOK_URL;
+const DINGTALK_WEBHOOK_URL =
+    (process.env.DINGTALK_WEBHOOK_URL || process.env.INPUT_DINGTALK_WEBHOOK_URL || '').trim() || undefined;
 
 export const sendToDingtalk = async (projects: Project[]) => {
     if (!DINGTALK_WEBHOOK_URL) {
