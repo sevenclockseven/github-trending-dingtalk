@@ -9,7 +9,7 @@ jobs:
   fetch-and-send:
     runs-on: ubuntu-latest
     env:
-      DINGTALK_WEBHOOK_URL: "${{ secrets.DINGTALK_WEBHOOK_URL }}"
+      DINGTALK_WEBHOOK_URL: ${{ secrets.DINGTALK_WEBHOOK_URL }}
 
     steps:
       - name: Checkout code
