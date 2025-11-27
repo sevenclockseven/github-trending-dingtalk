@@ -16,7 +16,7 @@ export const sendToDingtalk = async (projects: Project[]) => {
         await axios.post(DINGTALK_WEBHOOK_URL, {
             msgtype: 'text',
             text: {
-                content: "热门项目："+formattedData,
+                content: "热门项目：\n"+formattedData,
             },
         });
     } catch (error) {
