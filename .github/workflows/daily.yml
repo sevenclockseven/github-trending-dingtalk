@@ -2,7 +2,8 @@ name: Daily Trending Projects
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # 每天午夜触发
+    - cron: '0 0 * * *'  # 每天午夜（UTC）触发
+  workflow_dispatch: {}   # 允许手动触发，便于测试
 
 jobs:
   fetch-and-send:
@@ -10,18 +11,27 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
+
+      - name: Show workspace for debug
+        run: |
+          pwd
+          ls -la
+          node -v
+          npm -v
+          echo "package.json:"
+          cat package.json || true
 
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
-          node-version: '14'
+          node-version: '18'
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Build
         run: npm run build
 
       - name: Run the script
-        run: node dist/index.js  # 假设 TypeScript 编译后的文件在dist目录下
+        run: node dist/index.js
