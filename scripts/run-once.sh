@@ -7,18 +7,8 @@ if [ -z "${DINGTALK_WEBHOOK_URL:-}" ]; then
   exit 1
 fi
 
-# 编译 TypeScript（使用本地安装的 tsc）
-echo "编译 TypeScript..."
-npx tsc
-
 # 运行编译后的脚本
 echo "执行 dist/index.js..."
 node dist/index.js
 
-# ...existing code...
-
-# Run the TypeScript compiler
-tsc
-
-# Execute the main script
-node dist/index.js
+echo "脚本执行完成。"
