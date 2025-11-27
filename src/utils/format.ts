@@ -7,7 +7,6 @@ export interface Project {
     language?: string;
     // 根据实际 API 返回字段可继续补充
 }// ...existing code...
-import { Project } from '../types';
 
 export function formatProject(project: Project): string {
     const name = project.name || 'unknown';
