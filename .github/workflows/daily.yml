@@ -9,12 +9,19 @@ jobs:
   fetch-and-send:
     runs-on: ubuntu-latest
     env:
-      DINGTALK_WEBHOOK_URL: ${{ secrets.DINGTALK_WEBHOOK_URL }}
+      DINGTALK_WEBHOOK_URL: "${{ secrets.DINGTALK_WEBHOOK_URL }}"
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
+      - name: 检查 DINGTALK_WEBHOOK_URL 是否注入
+        run: |
+          if [ -z "${DINGTALK_WEBHOOK_URL:-}" ]; then
+            echo "DINGTALK_WEBHOOK_URL 未注入到环境中（missing）"
+            exit 1
+          else
+            echo "DINGTALK_WEBHOOK_URL 已注入（present）"
+          fi
       - name: Show workspace for debug
         run: |
           pwd
