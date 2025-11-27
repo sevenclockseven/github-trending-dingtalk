@@ -36,4 +36,4 @@ jobs:
         run: npm run build
 
       - name: Run the script
-        run: scripts/run-once.sh
+        run: bash scripts/run-once.sh
