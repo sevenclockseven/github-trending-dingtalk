@@ -1,10 +1,9 @@
 import axios from 'axios';
 import { formatProjectData } from './utils/format';
-import { Project } from './types';
 
 const DINGTALK_WEBHOOK_URL = process.env.DINGTALK_WEBHOOK_URL;
 
-export const sendToDingtalk = async (projects: Project[]) => {
+export const sendToDingtalk = async (projects: any[]) => {
     if (!DINGTALK_WEBHOOK_URL) {
         throw new Error('DINGTALK_WEBHOOK_URL is not defined in environment variables');
     }

@@ -1,5 +1,6 @@
 import axios from 'axios';
-import { Project } from './types';
+
+type Project = any;
 
 const GITHUB_TRENDING_URL = 'https://api.github.com/search/repositories?q=stars:>1&sort=stars&order=desc';
 
