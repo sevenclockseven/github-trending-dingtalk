@@ -20,5 +20,8 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Build
+        run: npm run build
+
       - name: Run the script
         run: node dist/index.js  # 假设 TypeScript 编译后的文件在dist目录下
