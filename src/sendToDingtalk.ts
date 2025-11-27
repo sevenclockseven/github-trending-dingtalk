@@ -3,7 +3,7 @@ import { formatProject, Project } from './utils/format';
 
 
 export const sendToDingtalk = async (projects: Project[]) => {
-    const DINGTALK_WEBHOOK_URL = 'https://oapi.dingtalk.com/robot/send?access_token=0be49d62bf02133eb679b8f14a15e93cc32e0a1c4cb6c1efeb84a7458ad2db07';
+    const DINGTALK_WEBHOOK_URL = process.env.DINGTALK_WEBHOOK_URL;
     if (!DINGTALK_WEBHOOK_URL) {
         throw new Error('DINGTALK_WEBHOOK_URL 未定义，请在 GitHub Actions 的 secrets 中添加该变量');
     }

@@ -21,6 +21,7 @@ jobs:
           ls -la
           node -v
           npm -v
+          npm i --save-dev @types/node
           echo "package.json:"
           cat package.json || true
 
