@@ -2,7 +2,7 @@ name: Daily Trending Projects
 
 on:
   schedule:
-    - cron: '21 1 * * *'  # 每天午夜（UTC）触发
+    - cron: '22 1 * * *'  # 每天午夜（UTC）触发
 
 
 jobs:
