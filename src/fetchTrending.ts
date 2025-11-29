@@ -14,7 +14,7 @@ const GITHUB_TRENDING_URL = () => {
   return `https://api.github.com/search/repositories?q=created:>=${dateString}+stars:>50&sort=stars&order=desc&per_page=100`;
 };
 
-export const fetchRisingProjects = async (): Promise<Project[]> => {
+export const fetchTrending = async (): Promise<Project[]> => {
   try {
     const response = await axios.get(GITHUB_TRENDING_URL());
     return response.data.items;
