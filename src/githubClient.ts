@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const GITHUB_API_URL = 'https://api.github.com';
-const TRENDING_REPO_QUERY = 'repositories?sort=stars&order=desc';
+const TRENDING_REPO_QUERY = 'search/repositories?sort=stars&order=desc';
 
 export class GitHubClient {
     private token: string;
