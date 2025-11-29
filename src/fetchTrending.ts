@@ -11,7 +11,7 @@ const GITHUB_TRENDING_URL = () => {
   const dateString = pastDate.toISOString().split('T')[0]; // 格式：YYYY-MM-DD
 
   // 搜索：过去一个月创建的项目，按 star 数降序排列
-  return `https://api.github.com/search/repositories?q=created:>=${dateString}+stars:>50&sort=stars&order=desc&per_page=100`;
+  return `https://api.github.com/search/repositories?q=created:>=${dateString}+stars:>50&sort=stars&order=desc&per_page=20`;
 };
 
 export const fetchTrending = async (): Promise<Project[]> => {
